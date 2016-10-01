@@ -1,4 +1,12 @@
 "use strict";
+
+/*global google: true*/
+/*global ko: true*/
+/*global $: true*/
+/*global console: true*/
+/*eslint no-undef: 1*/
+/*eslint no-unused-vars: 0*/
+
 var map;
 var model;
 var places;
@@ -9,9 +17,9 @@ function initMap() {
     center: {lat: 25.0000, lng: 72.0000},
     zoom: 4,
     mapTypeControlOptions: {
-        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-        position: google.maps.ControlPosition.TOP_RIGHT
-    },
+      style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+      position: google.maps.ControlPosition.TOP_RIGHT
+    }
   });
 
   infoWindow = new google.maps.InfoWindow({content: ""});
@@ -19,31 +27,31 @@ function initMap() {
   places = [
     {
       title: "Junagarh Fort",
-      marker: new google.maps.Marker({position: {lat: 28.0219, lng: 73.3187}, map: map, animation: google.maps.Animation.DROP}),
+      marker: new google.maps.Marker({position: {lat: 28.0219, lng: 73.3187}, map: map, animation: google.maps.Animation.DROP})
     },
     {
       title: "Kumbhalgarh Fort",
-      marker: new google.maps.Marker({position: {lat: 25.1528, lng: 73.5870}, map: map, animation: google.maps.Animation.DROP}),
+      marker: new google.maps.Marker({position: {lat: 25.1528, lng: 73.5870}, map: map, animation: google.maps.Animation.DROP})
     },
     {
       title: "Chittorgarh Fort",
-      marker: new google.maps.Marker({position: {lat: 24.8887, lng: 74.6269}, map: map, animation: google.maps.Animation.DROP}),
+      marker: new google.maps.Marker({position: {lat: 24.8887, lng: 74.6269}, map: map, animation: google.maps.Animation.DROP})
     },
     {
       title: "Mehrangarh Fort",
-      marker: new google.maps.Marker({position: {lat: 26.2978, lng: 73.0185}, map: map, animation: google.maps.Animation.DROP}),
+      marker: new google.maps.Marker({position: {lat: 26.2978, lng: 73.0185}, map: map, animation: google.maps.Animation.DROP})
     },
     {
       title: "Jaisalmer Fort",
-      marker: new google.maps.Marker({position: {lat: 26.9124, lng: 70.9123}, map: map, animation: google.maps.Animation.DROP}),
-    },
+      marker: new google.maps.Marker({position: {lat: 26.9124, lng: 70.9123}, map: map, animation: google.maps.Animation.DROP})
+    }
   ];
 
   model = new ViewModel();
   ko.applyBindings(model);
 
   places.forEach(function(p) {
-    p.marker.addListener('click', function() {
+    p.marker.addListener("click", function() {
       model.onPlaceClicked(p);
     });
   });
@@ -121,7 +129,7 @@ var ViewModel = function() {
       })
       .fail(function(err) {
         alert("Oh! something went wrong!");
-      })
+      });
     } else {
       infoWindow.close();
       infoWindow = new google.maps.InfoWindow({content: place.desc});
