@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 #map {
@@ -12,15 +14,6 @@
 ul {
   list-style-type: none;
   padding: 0;
-}
-
-ul > li {
-  cursor: pointer;
-  margin-top: 0.5em;
-  border: 1px solid lightgray;
-  border-radius: 4px;
-  font-size: 1em;
-  padding: 0.25em;
 }
 
 button {
@@ -47,13 +40,23 @@ ul > li:hover {
     transition: 0.5s;
 }
 
+.sidenav input {
+  width: 90%;
+  margin: auto;
+}
+
 .sidenav li {
     padding: 8px 8px 8px 32px;
-    margin-left: 0.25em;
-    margin-right: 0.25em;
-    text-decoration: none;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
-    transition: 0.3s
+    transition: 0.3s;
+    cursor: pointer;
+    margin-top: 0.5em;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-size: 1em;
 }
 
 .sidenav .closebtn {

@@ -51,16 +51,18 @@ function initMap() {
   drawMarker();
 }
 
-function drawMarker(all) {
-  var arr = places;
+function handleGoogleMapError() {
+  alert("Oh! No! unable to load google maps.");
+}
 
-  for(var i=0; i < arr.length; i++) {
-    // console.log(model.queryre());
-    if(all || arr[i].title.toLowerCase().match(model.queryre())) {
-      arr[i].marker.setVisible(true);
+function drawMarker(all) {
+  var len = places.length;
+  for(var i=0; i < len; i++) {
+    if(all || places[i].title.toLowerCase().match(model.queryre())) {
+      places[i].marker.setVisible(true);
     }
     else {
-      arr[i].marker.setVisible(false);
+      places[i].marker.setVisible(false);
     }
   }
 }
@@ -125,13 +127,13 @@ var ViewModel = function() {
       infoWindow = new google.maps.InfoWindow({content: place.desc});
       infoWindow.open(map, place.marker);
     }
-  }
+  };
 
   this.openNav = function() {
-    document.getElementById("side-nav").style.width = "250px";
-  }
+    document.getElementById("side-nav").style.width = "25%";
+  };
 
   this.closeNav = function() {
-    document.getElementById("side-nav").style.width = "0px";
-  }
+    document.getElementById("side-nav").style.width = "0%";
+  };
 };
