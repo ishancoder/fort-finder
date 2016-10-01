@@ -138,10 +138,10 @@ var ViewModel = function() {
   };
 
   this.openNav = function() {
-    document.getElementById("side-nav").style.width = "25%";
+    document.getElementById("side-nav").style.width = "250px";
   };
 
   this.closeNav = function() {
-    document.getElementById("side-nav").style.width = "0%";
+    document.getElementById("side-nav").style.width = "0px";
   };
 };
