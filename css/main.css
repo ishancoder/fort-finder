@@ -1,0 +1,24 @@
+#map {
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul > li {
+  cursor: pointer;
+  margin-top: 0.5em;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 0.25em;
+}
+
+ul > li:hover {
+  color: red;
+}
+
+input {
+  margin-top: 0.5em;
+}

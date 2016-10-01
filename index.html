@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" charset="width=device-width, initial-scale=1.0">
+    <title>A title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body class="container-fluid">
+    <div class="row">
+      <div class="col-md-2" id="side-nav">
+        <input type="text" class="form-control" placeholder="fort name?" data-bind="textInput: query">
+        <hr>
+        <ul data-bind="foreach: listPlace">
+          <li data-bind="text: title, click: $parent.onPlaceClicked"></li>
+        </ul>
+      </div>
+
+      <div class="col-md-10 col-xs-12" id="map">
+
+      </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/knockout.js" charset="utf-8"></script>
+    <script src="js/map.js" charset="utf-8"></script>
+    <!-- AIzaSyDFDUioxtqVhxkHUKIBfDbjgarTQNR6-_Q -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFDUioxtqVhxkHUKIBfDbjgarTQNR6-_Q&callback=initMap" async defer></script>
+  </body>
+</html>
