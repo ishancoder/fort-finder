@@ -7,7 +7,11 @@ var infoWindow;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: {lat: 25.0000, lng: 72.0000},
-    zoom: 4
+    zoom: 4,
+    mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+        position: google.maps.ControlPosition.TOP_RIGHT
+    },
   });
 
   infoWindow = new google.maps.InfoWindow({content: ""});
@@ -121,5 +125,13 @@ var ViewModel = function() {
       infoWindow = new google.maps.InfoWindow({content: place.desc});
       infoWindow.open(map, place.marker);
     }
+  }
+
+  this.openNav = function() {
+    document.getElementById("side-nav").style.width = "250px";
+  }
+
+  this.closeNav = function() {
+    document.getElementById("side-nav").style.width = "0px";
   }
 };

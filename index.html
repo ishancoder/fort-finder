@@ -2,25 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" charset="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A title</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
 
   <body class="container-fluid">
+    <div id="side-nav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" data-bind="click: closeNav">&times;</a>
+      <input type="text" class="form-control" placeholder="fort name?" data-bind="textInput: query">
+      <hr>
+      <ul data-bind="foreach: listPlace">
+        <li data-bind="text: title, click: $parent.onPlaceClicked"></li>
+      </ul>
+    </div>
+
+    <button data-bind="click: openNav" class="btn btn-default"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></button>
+
     <div class="row">
-      <div class="col-md-2" id="side-nav">
-        <input type="text" class="form-control" placeholder="fort name?" data-bind="textInput: query">
-        <hr>
-        <ul data-bind="foreach: listPlace">
-          <li data-bind="text: title, click: $parent.onPlaceClicked"></li>
-        </ul>
-      </div>
-
-      <div class="col-md-10 col-xs-12" id="map">
-
-      </div>
+      <div class="col-md-12" id="map"></div>
     </div>
 
     <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>

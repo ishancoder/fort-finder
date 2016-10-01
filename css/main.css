@@ -1,5 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 #map {
   height: 100vh;
+  transition: margin-left .5s;
+  padding: 0;
+  z-index: 1;
 }
 
 ul {
@@ -12,13 +19,53 @@ ul > li {
   margin-top: 0.5em;
   border: 1px solid lightgray;
   border-radius: 4px;
+  font-size: 1em;
   padding: 0.25em;
+}
+
+button {
+  position: absolute;
+  top: 1em;
+  z-index: 2;
+  left: 1em;
 }
 
 ul > li:hover {
   color: red;
 }
 
-input {
-  margin-top: 0.5em;
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav li {
+    padding: 8px 8px 8px 32px;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    z-index: 2;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav li {font-size: 18px;}
 }
